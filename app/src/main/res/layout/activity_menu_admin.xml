@@ -98,7 +98,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="Menu De Administador"
+            android:text="Menu De Administrador"
             android:textColor="@android:color/black"
             android:textSize="24sp"
             android:textStyle="bold" />
