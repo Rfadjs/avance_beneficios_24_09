@@ -9,14 +9,14 @@
 
     <Button
         android:id="@+id/button5"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="172dp"
+        android:layout_height="37dp"
         android:layout_gravity="end"
-        android:text="Cerrar Sesion"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:backgroundTint="#ADD8E6"
-        android:textColor="#000000"/>
+        android:text="Cerrar Sesion"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <LinearLayout
         android:id="@+id/linearLayout3"
@@ -35,8 +35,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
-            android:text="Tiendas"
             android:backgroundTint="#ADD8E6"
+            android:text="Tiendas"
             android:textColor="#000000" />
 
         <Button
@@ -44,8 +44,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
-            android:text="Productos"
             android:backgroundTint="#ADD8E6"
+            android:text="Productos"
             android:textColor="#000000" />
 
         <Button
@@ -53,17 +53,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
-            android:text="Beneficios"
             android:backgroundTint="#ADD8E6"
+            android:text="Beneficios"
             android:textColor="#000000" />
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/btnReglas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
-            android:text="Reglas"
             android:backgroundTint="#ADD8E6"
+            android:text="Reglas"
             android:textColor="#000000" />
 
     </LinearLayout>

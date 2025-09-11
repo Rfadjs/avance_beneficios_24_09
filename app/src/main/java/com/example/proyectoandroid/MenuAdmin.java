@@ -1,6 +1,8 @@
 package com.example.proyectoandroid;
 
 import android.os.Bundle;
+import android.widget.Button;
+import android.content.Intent;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +21,12 @@ public class MenuAdmin extends AppCompatActivity {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+        });
+
+        Button btnReglas = findViewById(R.id.btnReglas);
+        btnReglas.setOnClickListener(v -> {
+            Intent intent = new Intent(MenuAdmin.this, CrudReglas.class);
+            startActivity(intent);
         });
     }
 }
