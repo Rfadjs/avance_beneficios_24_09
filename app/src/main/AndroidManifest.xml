@@ -13,11 +13,13 @@
         android:theme="@style/Theme.ProyectoAndroid"
         tools:targetApi="31">
         <activity
-            android:name=".CrudReglas"
-            android:exported="true"/>
-
+            android:name=".Vista.CrudTiendasFragmen"
+            android:exported="false" />
         <activity
-            android:name=".MenuAdmin"
+            android:name=".Vista.CrudReglasFragment"
+            android:exported="true" />
+        <activity
+            android:name=".Vista.MenuAdmin"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,15 +27,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
-
         <activity
             android:name=".tabla"
-            android:exported="true"/>
-
+            android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Vista.MainActivity"
             android:exported="true" />
     </application>
 

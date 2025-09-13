@@ -1,4 +1,4 @@
-package com.example.proyectoandroid;
+package com.example.proyectoandroid.Modelo;
 
 public class Regla {
     private String nombre;
