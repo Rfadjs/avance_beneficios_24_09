@@ -1,7 +1,8 @@
-package com.example.proyectoandroid.Modelo;
-import androidx.room.Entity;
+package com.example.proyectoandroid.modelo;
 import androidx.room.PrimaryKey;
+import androidx.room.Entity;
 
+@Entity
 public class Sucursal {
 
     @PrimaryKey(autoGenerate = true)

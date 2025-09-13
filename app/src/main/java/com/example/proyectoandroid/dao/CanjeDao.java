@@ -5,6 +5,8 @@ import androidx.room.Update;
 import androidx.room.Delete;
 import androidx.room.Query;
 import java.util.List;
+import com.example.proyectoandroid.modelo.Canje;
+
 @Dao
 
 public interface CanjeDao {

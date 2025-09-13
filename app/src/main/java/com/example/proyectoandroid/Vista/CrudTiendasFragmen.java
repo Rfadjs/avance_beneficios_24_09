@@ -13,14 +13,12 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.proyectoandroid.Modelo.Tienda;
+import com.example.proyectoandroid.modelo.Tienda;
 import com.example.proyectoandroid.Adaptadores.TiendasAdapter;
 import com.example.proyectoandroid.R;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import com.example.proyectoandroid.R;
 
 public class CrudTiendasFragmen extends Fragment {
     private List<Tienda> listaTiendas;

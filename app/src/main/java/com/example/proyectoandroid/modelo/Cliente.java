@@ -1,7 +1,7 @@
-package com.example.proyectoandroid.Modelo;
+package com.example.proyectoandroid.modelo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
-import androidx.room.ColumnInfo;
+
 import java.util.Date;
 @Entity
 public class Cliente {

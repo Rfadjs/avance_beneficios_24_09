@@ -1,4 +1,5 @@
 package com.example.proyectoandroid.Adaptadores;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -7,23 +8,32 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.proyectoandroid.Modelo.Regla;
+import com.example.proyectoandroid.modelo.Regla;
 import com.example.proyectoandroid.R;
 
 import java.util.List;
-
 public class ReglasAdapter extends RecyclerView.Adapter<ReglasAdapter.ReglaViewHolder> {
-    private List<Regla> listaReglas;
+    private final List<Regla> listaReglas;
+    private OnItemClickListener listener; // Listener para clicks
 
     public ReglasAdapter(List<Regla> listaReglas) {
         this.listaReglas = listaReglas;
+    }
+
+    // INTERFAZ para clicks
+    public interface OnItemClickListener {
+        void onItemClick(Regla regla);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        this.listener = listener;
     }
 
     @NonNull
     @Override
     public ReglaViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_regla, parent, false); // <- aquí va tu layout de item
+                .inflate(R.layout.item_regla, parent, false);
         return new ReglaViewHolder(v);
     }
 
@@ -33,6 +43,13 @@ public class ReglasAdapter extends RecyclerView.Adapter<ReglasAdapter.ReglaViewH
         holder.textNombre.setText("Nombre: " + regla.getNombre());
         holder.textDescripcion.setText("Descripcion: " + regla.getDescripcion());
         holder.textOtros.setText("Otros: " + regla.getOtros());
+
+        // CLICK en el item
+        holder.itemView.setOnClickListener(v -> {
+            if (listener != null) {
+                listener.onItemClick(regla);
+            }
+        });
     }
 
     @Override

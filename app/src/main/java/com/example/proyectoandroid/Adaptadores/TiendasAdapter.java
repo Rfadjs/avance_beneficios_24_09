@@ -6,7 +6,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.proyectoandroid.Modelo.Tienda;
+import com.example.proyectoandroid.modelo.Tienda;
 import com.example.proyectoandroid.R;
 
 import java.util.List;

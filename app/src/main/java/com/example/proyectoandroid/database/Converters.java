@@ -1,4 +1,4 @@
-package com.example.proyectoandroid.datebase;
+package com.example.proyectoandroid.database;
 import androidx.room.TypeConverter;
 import java.util.Date;
 
