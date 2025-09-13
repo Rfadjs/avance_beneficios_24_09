@@ -30,8 +30,11 @@ android {
         targetCompatibility = JavaVersion.VERSION_11
     }
 }
-
+val roomVersion = "2.5.2"
 dependencies {
+
+    implementation("androidx.room:room-runtime:$roomVersion")
+    annotationProcessor("androidx.room:room-compiler:$roomVersion")
 
     implementation(libs.appcompat)
     implementation(libs.material)
