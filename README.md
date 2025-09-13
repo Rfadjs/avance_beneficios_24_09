@@ -1,4 +1,4 @@
-Proyecto Android - Gestión de Reglas y Entidades
+Proyecto Android - Cafeteria
 Descripción
 
 Este proyecto es una aplicación Android desarrollada en Java que implementa un CRUD completo para varias entidades como Reglas, Clientes, Productos, Tiendas, Beneficios, Visitas y Canjes, utilizando Room Database para persistencia local.
@@ -19,16 +19,6 @@ Arquitectura: Controladores para encapsular la lógica de negocio y DAOs para el
 
 Otros: LiveData para actualizar automáticamente el RecyclerView
 
-Estructura del Proyecto
-com.example.proyectoandroid
-│
-├── controller/        # Controladores para lógica de negocio (ReglaController, ClienteController, etc.)
-├── dao/               # Interfaces DAO para CRUD con Room
-├── database/          # AppDatabase y TypeConverters
-├── modelo/            # Clases modelo / entidades de Room
-├── Adaptadores/       # Adaptadores para RecyclerView
-├── Vista/             # Activities y Fragments de la UI
-└── res/               # Layouts, drawables, colores, strings
 
 Funcionalidades
 
@@ -54,7 +44,7 @@ Cada item del RecyclerView es clickeable para seleccionar y editar.
 
 Instalación
 
-Clonar el repositorio:
+Clonar el repositorio: https://github.com/BrianG-R/Proyecto-Android.git
 
 Abrir el proyecto en Android Studio.
 
