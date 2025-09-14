@@ -7,7 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".Vista.MenuAdmin"
     android:background="#F5F0E6">
-    <!-- Menú lateral fijo -->
     <LinearLayout
         android:id="@+id/linearLayoutMenu"
         android:layout_width="match_parent"
@@ -19,16 +18,16 @@
         app:layout_constraintBottom_toBottomOf="parent"
         android:padding="8dp" >
 
-    <!-- Logo de la cafetería -->
-    <ImageView
-        android:id="@+id/imageViewLogo"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:src="@drawable/logocafeteria"
-        android:scaleType="centerInside"
-        android:layout_marginBottom="16dp"/>
+        <!-- Logo de la cafetería -->
+        <ImageView
+            android:id="@+id/imageViewLogo"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:src="@drawable/logocafeteria"
+            android:scaleType="centerInside"
+            android:layout_marginBottom="16dp"/>
 
-    <!-- Botones de navegación -->
+        <!-- Botones de navegación -->
         <Button
             android:id="@+id/btnClientes"
             android:layout_width="match_parent"
@@ -39,63 +38,74 @@
             android:textColor="#3E2723" />
 
         <Button
-        android:id="@+id/btnTiendas"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="Tiendas"
-        android:backgroundTint="#D9A066"
-        android:textColor="#3E2723" />
+            android:id="@+id/btnTiendas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Tiendas"
+            android:backgroundTint="#D9A066"
+            android:textColor="#3E2723" />
 
-    <Button
-        android:id="@+id/btnProductos"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="Productos"
-        android:backgroundTint="#D9A066"
-        android:textColor="#3E2723" />
+        <Button
+            android:id="@+id/btnProductos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Productos"
+            android:backgroundTint="#D9A066"
+            android:textColor="#3E2723" />
 
-    <Button
-        android:id="@+id/btnBeneficios"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="Beneficios"
-        android:backgroundTint="#D9A066"
-        android:textColor="#3E2723" />
+        <Button
+            android:id="@+id/btnBeneficios"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Beneficios"
+            android:backgroundTint="#D9A066"
+            android:textColor="#3E2723" />
 
-    <Button
-        android:id="@+id/btnReglas"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="Reglas"
-        android:backgroundTint="#D9A066"
-        android:textColor="#3E2723" />
+        <Button
+            android:id="@+id/btnReglas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Reglas"
+            android:backgroundTint="#D9A066"
+            android:textColor="#3E2723" />
 
-    <!-- Botón de cerrar sesión -->
-    <Button
-        android:id="@+id/btnCerrar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Cerrar Sesión"
-        android:backgroundTint="#A0522D"
-        android:textColor="#FFFFFF" />
+        <!-- Botón Escanear QR -->
+        <Button
+            android:id="@+id/btnEscanearQR"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:text="Escanear QR"
+            android:backgroundTint="#D9A066"
+            android:textColor="#3E2723" />
 
-</LinearLayout>
+        <!-- Botón de cerrar sesión -->
+        <Button
+            android:id="@+id/btnCerrar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Cerrar Sesión"
+            android:backgroundTint="#A0522D"
+            android:textColor="#FFFFFF" />
+
+    </LinearLayout>
 
     <!-- Contenedor para cargar fragments -->
-<FrameLayout
-    android:id="@+id/fragmentContainer"
-    android:layout_width="0dp"
-    android:layout_height="0dp"
-    android:background="#FFF8E1"
-    android:visibility="gone"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"/> <!-- Fondo crema para fragment -->
+    <FrameLayout
+        android:id="@+id/fragmentContainer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#FFF8E1"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

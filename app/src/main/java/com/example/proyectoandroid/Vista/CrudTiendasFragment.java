@@ -20,7 +20,7 @@ import com.example.proyectoandroid.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CrudTiendasFragmen extends Fragment {
+public class CrudTiendasFragment extends Fragment {
     private List<Tienda> listaTiendas;
     private TiendasAdapter adapter;
 

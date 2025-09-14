@@ -27,6 +27,7 @@ public class CrudReglasFragment extends Fragment {
     private ReglaController reglaController;
     private Regla reglaSeleccionada = null;
 
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -68,13 +69,29 @@ public class CrudReglasFragment extends Fragment {
         listaReglas = reglaController.obtenerReglas();
         adapter = new ReglasAdapter(listaReglas);
 
+        // ------------------- LISTENER PARA GENERAR QR -------------------
+        adapter.setOnQRClickListener(regla -> {
+            String datosQR = "Beneficio: " + regla.getNombre() +
+                    " | Descripción: " + regla.getDescripcion() +
+                    " | Otros: " + regla.getOtros();
+
+            GenerarQRFragment qrFragment = GenerarQRFragment.newInstance(datosQR);
+
+            if (getActivity() != null) {
+                getActivity().getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragmentContainer, qrFragment)
+                        .addToBackStack(null)
+                        .commit();
+            }
+        });
+
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(adapter);
 
         // ------------------- SELECCIÓN DEL ITEM -------------------
         adapter.setOnItemClickListener(regla -> {
             reglaSeleccionada = regla;
-            // Llenar EditTexts con los datos seleccionados
             etNombre.setText(regla.getNombre());
             etDescripcion.setText(regla.getDescripcion());
             etOtros.setText(regla.getOtros());
@@ -95,7 +112,6 @@ public class CrudReglasFragment extends Fragment {
                 listaReglas.addAll(reglaController.obtenerReglas());
                 adapter.notifyDataSetChanged();
 
-                // Limpiar selección y campos
                 reglaSeleccionada = null;
                 etNombre.setText("Nombre");
                 etDescripcion.setText("Descripcion");

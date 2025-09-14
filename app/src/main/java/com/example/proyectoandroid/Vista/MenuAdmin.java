@@ -7,9 +7,7 @@ import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 
-import androidx.room.Room;
 
 
 
@@ -29,6 +27,7 @@ public class MenuAdmin extends AppCompatActivity {
         menuContainer = findViewById(R.id.linearLayoutMenu);
         fragmentContainer = findViewById(R.id.fragmentContainer);
 
+
         // Botones del menú
         Button btnClientes =findViewById(R.id.btnClientes);
         Button btnReglas = findViewById(R.id.btnReglas);
@@ -36,6 +35,7 @@ public class MenuAdmin extends AppCompatActivity {
         Button btnProductos = findViewById(R.id.btnProductos);
         Button btnBeneficios = findViewById(R.id.btnBeneficios);
         Button btnCerrar = findViewById(R.id.btnCerrar);
+        Button btnEscanearQR = findViewById(R.id.btnEscanearQR);
 
         // Botón Reglas → mostrar fragment a pantalla completa
         btnReglas.setOnClickListener(v -> {
@@ -48,7 +48,7 @@ public class MenuAdmin extends AppCompatActivity {
 
         // Aquí se pueden agregar los otros botones cuando tengas los fragments
         btnTiendas.setOnClickListener(v -> {
-            loadFragment(new CrudTiendasFragmen());
+            loadFragment(new CrudTiendasFragment());
         });
 
         btnProductos.setOnClickListener(v -> {
@@ -57,6 +57,10 @@ public class MenuAdmin extends AppCompatActivity {
 
         btnBeneficios.setOnClickListener(v -> {
             // loadFragment(new BeneficiosFragment());
+        });
+
+        btnEscanearQR.setOnClickListener(v -> {
+            loadFragment(new ScanQRFragment());
         });
 
         btnCerrar.setOnClickListener(v -> finish());
