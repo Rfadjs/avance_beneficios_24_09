@@ -20,28 +20,33 @@
             android:layout_height="wrap_content"
             android:text="Nombre: "
             android:textStyle="bold"
-            android:textSize="16sp"/>
+            android:textSize="16sp"
+            android:textColor="@color/brown_dark"/>/>
 
         <TextView
             android:id="@+id/textDescripcion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Descripcion: "
-            android:layout_marginTop="4dp"/>
+            android:layout_marginTop="4dp"
+            android:textColor="@color/brown_dark"/>/>
 
         <TextView
             android:id="@+id/textOtros"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Otros: "
-            android:layout_marginTop="4dp"/>
+            android:layout_marginTop="4dp"
+            android:textColor="@color/brown_dark"/>/>
 
         <Button
             android:id="@+id/btnGenerarQR"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Generar QR"
-            android:layout_marginTop="8dp"/>
+            android:layout_marginTop="8dp"
+            android:backgroundTint="#3E2723"
+            android:textColor="#FFFFFF"/>
 
 
 

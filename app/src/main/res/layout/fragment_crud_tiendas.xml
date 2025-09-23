@@ -12,14 +12,15 @@
         android:id="@+id/textViewTitulo"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Sucursales"
+        android:text="Tiendas"
         android:textSize="24sp"
         android:textStyle="bold"
         android:gravity="center"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp"/>
+        android:layout_marginTop="16dp"
+        android:textColor="@color/brown_dark"/>/>
 
     <!-- Campos del formulario -->
     <EditText
@@ -62,13 +63,26 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="8dp"/>
 
+    <!-- Botón para seleccionar ubicación -->
+    <Button
+        android:id="@+id/btnSeleccionarUbicacion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Seleccionar Ubicación"
+        android:backgroundTint="#D9A066"
+        android:textColor="#3E2723"
+        app:layout_constraintTop_toBottomOf="@id/etEstado"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="8dp"/>
+
     <!-- Botones: 2 filas -->
     <LinearLayout
         android:id="@+id/linearLayoutBotonesContenedor"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@id/etEstado"
+        app:layout_constraintTop_toBottomOf="@id/btnSeleccionarUbicacion"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="8dp">

@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.android.application)
+    alias(libs.plugins.google.android.libraries.mapsplatform.secrets.gradle.plugin)
 }
 
 android {
@@ -32,8 +33,11 @@ android {
 }
 val roomVersion = "2.5.2"
 dependencies {
+    implementation("com.google.android.gms:play-services-maps:18.1.0")
+    implementation("com.google.android.gms:play-services-location:21.0.1")
 
     implementation("androidx.room:room-runtime:$roomVersion")
+    implementation(libs.play.services.maps)
     annotationProcessor("androidx.room:room-compiler:$roomVersion")
     implementation("com.journeyapps:zxing-android-embedded:4.3.0")
     implementation("com.google.zxing:core:3.5.0")

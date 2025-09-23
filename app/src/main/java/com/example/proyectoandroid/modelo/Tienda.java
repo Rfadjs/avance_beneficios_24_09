@@ -3,13 +3,18 @@ import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 @Entity
-public class Tienda {@PrimaryKey(autoGenerate = true)
-private int id_tienda;
+public class Tienda {
+    @PrimaryKey(autoGenerate = true)
+    private int id_tienda;
 
     private String nombre;
     private String direccion;
     private String horario;
     private String estado;
+
+    // Coordenadas
+    private double lat;
+    private double lon;
 
     public Tienda(String nombre, String direccion, String horario, String estado) {
         this.nombre = nombre;
@@ -18,7 +23,7 @@ private int id_tienda;
         this.estado = estado;
     }
 
-    // Getters y Setters
+    // Getters y setters
     public int getId_tienda() { return id_tienda; }
     public void setId_tienda(int id_tienda) { this.id_tienda = id_tienda; }
 
@@ -33,4 +38,10 @@ private int id_tienda;
 
     public String getEstado() { return estado; }
     public void setEstado(String estado) { this.estado = estado; }
+
+    public double getLat() { return lat; }
+    public void setLat(double lat) { this.lat = lat; }
+
+    public double getLon() { return lon; }
+    public void setLon(double lon) { this.lon = lon; }
 }

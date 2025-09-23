@@ -60,6 +60,7 @@ public class CrudReglasFragment extends Fragment {
                         getContext(),
                         AppDataBase.class,
                         "app_database")
+                .fallbackToDestructiveMigration()
                 .allowMainThreadQueries()
                 .build();
 

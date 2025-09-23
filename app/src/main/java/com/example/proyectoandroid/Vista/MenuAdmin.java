@@ -23,6 +23,13 @@ public class MenuAdmin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_admin);
 
+        getSupportFragmentManager().addOnBackStackChangedListener(() -> {
+            // Si no hay fragments en el backstack → mostramos el menú
+            if (getSupportFragmentManager().getBackStackEntryCount() == 0) {
+                showMenu();
+            }
+        });
+
         // Inicializar referencias
         menuContainer = findViewById(R.id.linearLayoutMenu);
         fragmentContainer = findViewById(R.id.fragmentContainer);
