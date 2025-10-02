@@ -41,16 +41,15 @@ public class CrudBeneficiosFragment extends Fragment {
 
         EditText etNombre = view.findViewById(R.id.editTextNombreBeneficio);
         EditText etDescripcion = view.findViewById(R.id.editTextDescripcionBeneficio);
-        EditText etBuscar = view.findViewById(R.id.editTextBuscar); // EditText buscar
+        EditText etBuscar = view.findViewById(R.id.editTextBuscar);
 
         Button btnAgregar = view.findViewById(R.id.buttonAgregarBeneficio);
         Button btnEliminar = view.findViewById(R.id.buttonEliminarBeneficio);
         Button btnVolver = view.findViewById(R.id.buttonVolver);
-        Button btnBuscar = view.findViewById(R.id.btnBuscar); // Botón buscar
+        Button btnBuscar = view.findViewById(R.id.btnBuscar);
 
         RecyclerView recyclerView = view.findViewById(R.id.recyclerViewBeneficios);
 
-        // Inicializar base de datos y controlador
         AppDataBase db = Room.databaseBuilder(
                         getContext(),
                         AppDataBase.class,
@@ -61,15 +60,14 @@ public class CrudBeneficiosFragment extends Fragment {
 
         beneficioController = new BeneficioController(db);
 
-        // Cargar datos desde Room
         listaBeneficios = beneficioController.obtenerBeneficios();
         adapter = new BeneficiosAdapter(listaBeneficios);
 
         // ------------------- LISTENER PARA GENERAR QR -------------------
         adapter.setOnQRClickListener(beneficio -> {
-            String qrContent = beneficio.getNombre() + " | " +
-                    beneficio.getDescripcion() + " | " +
-                    UUID.randomUUID();
+            String qrContent = "Beneficio: " + beneficio.getNombre() + "\n" +
+                    "Descripción: " + beneficio.getDescripcion() + "\n" +
+                    "ID: " + UUID.randomUUID();
 
             GenerarQRFragment qrFragment = GenerarQRFragment.newInstance(qrContent);
 
@@ -94,7 +92,6 @@ public class CrudBeneficiosFragment extends Fragment {
 
         // ------------------- BOTONES -------------------
 
-        // Agregar beneficio
         btnAgregar.setOnClickListener(v -> {
             String nombre = etNombre.getText().toString();
             String descripcion = etDescripcion.getText().toString();
@@ -109,7 +106,6 @@ public class CrudBeneficiosFragment extends Fragment {
             }
         });
 
-        // Eliminar beneficio seleccionado
         btnEliminar.setOnClickListener(v -> {
             if (beneficioSeleccionado != null) {
                 beneficioController.eliminarBeneficio(beneficioSeleccionado);
@@ -121,22 +117,18 @@ public class CrudBeneficiosFragment extends Fragment {
             }
         });
 
-        // Volver al menú
         btnVolver.setOnClickListener(v -> {
             if (getActivity() != null) {
                 getActivity().getSupportFragmentManager().popBackStack();
             }
         });
 
-        // ------------------- BOTÓN BUSCAR -------------------
         btnBuscar.setOnClickListener(v -> {
             String textoBuscar = etBuscar.getText().toString().trim().toLowerCase();
 
             if (textoBuscar.isEmpty()) {
-                // Mostrar todos
                 actualizarLista();
             } else {
-                // Filtrar por nombre
                 List<Beneficio> filtrados = beneficioController.obtenerBeneficios().stream()
                         .filter(b -> b.getNombre().toLowerCase().contains(textoBuscar))
                         .collect(Collectors.toList());

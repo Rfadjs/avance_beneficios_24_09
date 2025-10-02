@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:padding="12dp"
     android:layout_margin="8dp"
-    android:background="#D9D9D9"
+    android:background="#D9A066"
     android:elevation="4dp">
 
     <TextView
@@ -13,9 +13,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Nombre del Beneficio"
-        android:textSize="18sp"
         android:textStyle="bold"
-        android:textColor="#333333" />
+        android:textSize="16sp"
+        android:textColor="@color/brown_dark"/>/>
 
     <TextView
         android:id="@+id/textViewDescripcionBeneficio"
@@ -33,7 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="Generar QR"
-        android:backgroundTint="#D9A066"
-        android:textColor="#3E2723" />
+        android:backgroundTint="#3E2723"
+        android:textColor="#FFFFFF"/>
 
 </LinearLayout>
